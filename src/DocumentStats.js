@@ -6,7 +6,7 @@ export default class DocumentStats {
         this.wordAnalyzer = new WordAnalyzer(text)
     }
     getWordCount() {
-        return this.wordAnalyzer.getWordCount()
+        return this.wordAnalyzer.countWords()
     }
 
      summary() {
