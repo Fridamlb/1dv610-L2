@@ -1,6 +1,6 @@
 export default class ParagraphAnalyzer {
     constructor(text) {
-        this.text = text;
+        this.text = text
     }
 
     countParagraphs() {
@@ -8,7 +8,7 @@ export default class ParagraphAnalyzer {
         const paragraphs = this.text
             .split(/\n\s*\n/)
             .map(p => p.trim())
-            .filter(p => p.length > 0);
+            .filter(p => p.length > 0)
         return paragraphs.length;
     }
 }
