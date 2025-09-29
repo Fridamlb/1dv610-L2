@@ -8,4 +8,10 @@ export default class DocumentStats {
     getWordCount() {
         return this.wordAnalyzer.getWordCount()
     }
+
+     summary() {
+        return {
+            words: this.getWordCount()
+        }
+    }
   }
