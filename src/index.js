@@ -15,8 +15,8 @@ process.stdin.on('end', () => {
     }
 
     const doc = new DocumentStats(inputText)
-    console.log('Sammanfattning:')
-    console.log(doc.summary())
+    console.log('\nSammanfattning:')
+    console.log(JSON.stringify(doc.summary(), null, 2))
 })
 
 console.log('Klistra in texten och tryck Ctrl+D när du är klar:')
