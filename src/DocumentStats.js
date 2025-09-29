@@ -22,8 +22,8 @@ export default class DocumentStats {
     getParagraphCount() {
       return this.paragraphAnalyzer.countParagraphs()
     }
-    getTitle() {
-      return this.titleExtractor.extractTitle()
+    getTitles() {
+      return this.titleExtractor.extractTitles()
     }
 
      summary() {
@@ -31,7 +31,7 @@ export default class DocumentStats {
             words: this.getWordCount(),
             sentences: this.getSentenceCount(),
             paragraphs: this.getParagraphCount(),
-            title: this.getTitle()
+            titles: this.getTitles()
         }
     }
   }
