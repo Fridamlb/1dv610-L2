@@ -1,0 +1,13 @@
+{
+  "name": "1dv610-l2",
+  "version": "1.0.0",
+  "description": "**DocumentStats** är en JavaScript-modul för enkel och effektiv analys av textdokument. Modulen kan räkna ord, meningar, stycken, extrahera titlar och generera en sammanfattande statistikrapport.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Frida Berg",
+  "license": "ISC"
+}
