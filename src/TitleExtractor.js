@@ -34,9 +34,9 @@ isTitleLine(line, words) {
     const firstChar = trimmed[0]
     if (firstChar !== firstChar.toUpperCase()) return false
 
-    // Slutar med punkt? tillåt frågetecken eller utrop
-    const lastChar = trimmed[trimmed.length - 1]
-    if (lastChar === '.') return false
+  // Slutar med skiljetecken? (punkt, frågetecken, utrop)
+  const lastChar = trimmed[trimmed.length - 1]
+  if (['.', '?', '!'].includes(lastChar)) return false
 
     return true
 }
