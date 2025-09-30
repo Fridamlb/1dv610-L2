@@ -37,10 +37,4 @@ export default class TitleExtractor {
         
         return true;
     }
-
-    isAbbreviation(word) {
-        // Hantera vanliga förkortningar som kan finnas i titlar
-        const abbreviations = ['DR', 'MR', 'MRS', 'PROF', 'INC', 'LTD'];
-        return abbreviations.includes(word.toUpperCase());
-    }
 }
