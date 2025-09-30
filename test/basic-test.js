@@ -18,6 +18,8 @@ const stats = new DocumentStats(testText)
 
 console.log('DOKUMENTSTATISTIK')
 console.log('Ord:', stats.getWordCount())
+console.log('Längsta ord:', stats.getLongestWord())
+console.log('Kortaste ord:', stats.getShortestWord())
 console.log('Meningar:', stats.getSentenceCount())
 console.log('Stycken:', stats.getParagraphCount())
 console.log('Titlar:', stats.getTitles())
