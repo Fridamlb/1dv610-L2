@@ -1,22 +1,10 @@
 import DocumentStats from './DocumentStats.js'
 
-let inputText = ''
+// Export huvudklassen som standard
+export default DocumentStats
 
-process.stdin.setEncoding('utf8')
-
-process.stdin.on('data', chunk => {
-    inputText += chunk
-})
-
-process.stdin.on('end', () => {
-    if (!inputText.trim()) {
-        console.log('Ingen text angiven.')
-        process.exit(1)
-    }
-
-    const doc = new DocumentStats(inputText)
-    console.log('\nSammanfattning:')
-    console.log(JSON.stringify(doc.summary(), null, 2))
-})
-
-console.log('Klistra in texten och tryck Ctrl+D när du är klar:')
+// Export individuella analyzers
+export { default as WordAnalyzer } from './WordAnalyzer.js'
+export { default as SentenceAnalyzer } from './SentenceAnalyzer.js'
+export { default as ParagraphAnalyzer } from './ParagraphAnalyzer.js'
+export { default as TitleExtractor } from './TitleExtractor.js'
