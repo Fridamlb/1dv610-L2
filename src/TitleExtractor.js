@@ -21,20 +21,23 @@ export default class TitleExtractor {
         return titles
     }
 
-    isTitleLine(line, words) {
-        // För lång för titel
-        if (words.length > 10 || words.length < 1) return false
-        
-        // Inga punkt-tecken i titlar (undantag: förkortningar)
-        if (line.includes('.')) return false
-        
-        // Första ordet ska vara versaler (hela ordet)
-        const firstWord = words[0];
-        if (firstWord !== firstWord.toUpperCase()) return false
-        
-        // Titlar slutar sällan med punkt
-        if (line.trim().endsWith('.')) return false
-        
-        return true;
-    }
+isTitleLine(line, words) {
+    const trimmed = line.trim()
+
+    // För kort eller för lång
+    if (words.length < 2 || words.length > 20) return false
+
+    // Om raden innehåller punkt mitt i, troligen inte en titel
+    if (trimmed.slice(0, -1).includes('.')) return false
+
+    // Börjar med stor bokstav
+    const firstChar = trimmed[0]
+    if (firstChar !== firstChar.toUpperCase()) return false
+
+    // Slutar med punkt? tillåt frågetecken eller utrop
+    const lastChar = trimmed[trimmed.length - 1]
+    if (lastChar === '.') return false
+
+    return true
+}
 }
