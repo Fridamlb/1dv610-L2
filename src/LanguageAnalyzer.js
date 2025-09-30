@@ -16,21 +16,13 @@ export default class LanguageAnalyzer {
     const swedishChars = this.countSwedishCharacters(text)
     swedishScore += swedishChars * 2 // Ge högre vikt åt svenska tecken
 
-    // 2. Kolla vanliga svenska ord
-    const swedishWords = ['och', 'i', 'att', 'som', 'en', 'på', 'är', 'av', 'för', 'med', 'det', 'ett', 'var', 'ska']
+    // 2. Kolla vanliga svenska ord (utan åäö)
+    const swedishWords = ['och', 'i', 'att', 'som', 'en', 'av', 'med', 'det', 'ett', 'var', 'ska', 'den']
     swedishScore += this.countCommonWords(text, swedishWords)
 
-    // 3. Kolla vanliga engelska ord  
-    const englishWords = ['the', 'and', 'is', 'in', 'to', 'of', 'a', 'that', 'it', 'with', 'for', 'are', 'this', 'but']
+    // 3. Kolla vanliga engelska ord
+    const englishWords = ['the', 'and', 'is', 'in', 'to', 'of', 'a', 'that', 'it', 'with', 'are', 'this', 'but']
     englishScore += this.countCommonWords(text, englishWords)
-
-    // 4. Kolla svenska detektorer
-    const swedishDetecters = ['en', 'ett', 'det', 'den']
-    swedishScore += this.countCommonWords(text, swedishDetecters)
-
-    // 5. Kolla vanliga engelska detektorer
-    const englishDetecters = ['the', 'a', 'an']
-    englishScore += this.countCommonWords(text, englishDetecters)
 
     // Beräkna konfidens
     const totalScore = swedishScore + englishScore

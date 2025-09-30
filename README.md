@@ -1,6 +1,6 @@
 # 1dv610-L2
 
-**DocumentStats** är en JavaScript-modul för enkel och effektiv analys av textdokument. Modulen kan räkna ord, meningar, stycken, extrahera titlar och generera en sammanfattande statistikrapport.
+**DocumentStats** är en JavaScript-modul för enkel och effektiv analys av textdokument. Modulen kan alltså göra en sammanfattad analys av din text till exempel hur många ord, meningar och stycken osv.
 
 ---
 
@@ -8,13 +8,16 @@
 
 Modulen erbjuder följande funktioner:
 
-- **Räkna totalt antal ord** i texten.
-- **Räkna meningar**.
-- **Dela texten i stycken** och räkna antal stycken.
-- **Extrahera titlar** baserat på enkel heuristik: en rad som börjar med stor bokstav och är kortare än 10 ord.
-- **Generera en sammanfattande statistikrapport** som innehåller ord, meningar, stycken, titlar och annan relevant information.
+- **Räkna totalt antal ord**
+- **Räkna totalt antal meningar**.
+- **räkna antal stycken**
+- **Extrahera titlar**
+- **Extrahera längsta ord**
+- **Extrahera kortaste ord**
+- **Analysera om texten är på svenska eller engelska**
+- **Söka efter ett specifikt ord och räkna ut hur många gånger det ordet dyker upp i texten**
 
 ---
 
 **NOTES**
-[LICENSE](LICENSE)
+[LICENSE MIT](LICENSE)

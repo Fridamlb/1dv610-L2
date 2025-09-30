@@ -5,9 +5,9 @@
   "main": "src/DocumentStats.js",
   "type": "module",
   "scripts": {
-    "test": "node test/terminal-test.js",
-    "dev": "node test/basic-test.js",
-    "start": "node test/terminal-test.js",
+  "test": "node test/manuella-test.js",
+  "dev": "node test/basic-test.js",
+  "start": "node test/terminal-test.js",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix"
   },
