@@ -23,17 +23,17 @@ export default class TitleExtractor {
 
     isTitleLine(line, words) {
         // För lång för titel
-        if (words.length > 10 || words.length < 1) return false;
+        if (words.length > 10 || words.length < 1) return false
         
         // Inga punkt-tecken i titlar (undantag: förkortningar)
-        if (line.includes('.') && !this.isAbbreviation(line)) return false;
+        if (line.includes('.')) return false
         
         // Första ordet ska vara versaler (hela ordet)
         const firstWord = words[0];
-        if (firstWord !== firstWord.toUpperCase()) return false;
+        if (firstWord !== firstWord.toUpperCase()) return false
         
         // Titlar slutar sällan med punkt
-        if (line.trim().endsWith('.')) return false;
+        if (line.trim().endsWith('.')) return false
         
         return true;
     }
