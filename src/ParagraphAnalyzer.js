@@ -4,11 +4,11 @@ export default class ParagraphAnalyzer {
     }
 
     countParagraphs() {
-        if (!this.text) return 0;
+        if (!this.text) return 0
         const paragraphs = this.text
             .split(/\n\s*\n/)
             .map(p => p.trim())
             .filter(p => p.length > 0)
-        return paragraphs.length;
+        return paragraphs.length
     }
 }

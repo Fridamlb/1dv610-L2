@@ -2,6 +2,7 @@ import WordAnalyzer from './WordAnalyzer.js'
 import SentenceAnalyzer from './SentenceAnalyzer.js'
 import ParagraphAnalyzer from './ParagraphAnalyzer.js'
 import TitleExtractor from './TitleExtractor.js'
+import LanguageAnalyzer from './LanguageAnalyzer.js'
 
 export default class DocumentStats {
     constructor(text) {
@@ -10,6 +11,7 @@ export default class DocumentStats {
         this.sentenceAnalyzer = new SentenceAnalyzer(text)
         this.paragraphAnalyzer = new ParagraphAnalyzer(text)
         this.titleExtractor = new TitleExtractor(text)
+        this.languageAnalyzer = new LanguageAnalyzer(text)
     }
     getWordCount() {
       return this.wordAnalyzer.countWords()
@@ -26,12 +28,17 @@ export default class DocumentStats {
       return this.titleExtractor.extractTitles()
     }
 
+    getLanguage() {
+      return this.languageAnalyzer.detectLanguage()
+    }
+
      summary() {
         return {
             words: this.getWordCount(),
             sentences: this.getSentenceCount(),
             paragraphs: this.getParagraphCount(),
-            titles: this.getTitles()
+            titles: this.getTitles(),
+            language: this.getLanguage()
         }
     }
-  }
+}
