@@ -40,17 +40,17 @@ export default class LanguageAnalyzer {
   }
 
   countSwedishCharacters(text) {
-    const swedishCharRegex = /[åäö]/g
+    const swedishCharRegex = /[åäö]/g // Regex för att hitta å, ä, ö. /g betyder sök genom hela texten
     const matches = text.match(swedishCharRegex)
     return matches ? matches.length : 0
   }
 
   countCommonWords(text, words) {
     let count = 0
-    const textWords = text.split(/\s+/)
+    const textWords = text.split(/\s+/) // dela upp texten i ord baserat på mellanslag
         
     for (const word of textWords) {
-      const cleanWord = word.replace(/[.,!?;:()]/g, '')
+      const cleanWord = word.replace(/[.,!?;:()]/g, '') // Regex för att hitta alla märkern inom []. och ta bort dem. /g betyder sök genom hela texten.
       if (words.includes(cleanWord)) {
         count++
       }
